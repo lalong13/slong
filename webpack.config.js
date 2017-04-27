@@ -1,31 +1,34 @@
+/*const webpack = require('webpack');
+const path = require('path');
+
 module.exports = {
-    entry: './src/client.js',
+    entry: path.join(__dirname, 'src', 'client.js'),
     output: {
-        path: './public',
+        path: path.join(__dirname, 'src', 'public', 'js'),
         filename: 'bundle.js'
     },
     module: {
         loaders: [
             {
-                test: /\.js$/,
+                test: path.join(__dirname, 'src'),
                 exclude: /node_modules/,
-                loader: 'babel-loader'
+                loader: 'babel-loader',
             }
             ]
     },
     resolve: {
         extensions: ['', '.js', '.json']
     }
-};
+};*/
 
-/*// webpack.config.js
+// webpack.config.js
 const webpack = require('webpack');
 const path = require('path');
 
 module.exports = {
-  entry: path.join(__dirname, 'src', 'app-client.js'),
+  entry: path.join(__dirname, 'src', 'client.js'),
   output: {
-    path: path.join(__dirname, 'src', 'static', 'js'),
+    path: path.join(__dirname, 'src', 'public', 'js'),
     filename: 'bundle.js'
   },
   module: {
@@ -53,4 +56,3 @@ module.exports = {
     })
   ]
 };
-*/
