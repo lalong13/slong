@@ -7,16 +7,29 @@ import React from 'react';
 import { renderToString } from 'react-dom/server';
 import { match, RouterContext } from 'react-router';
 import routes from './routes';
+import mongo from 'mongodb';
+import Monk from 'monk';
+
 //import NotFoundPage from './components/NotFoundPage';
 
 // initialize the server and configure support for ejs templates
+const db = new Monk('localhost:27017/forums');
 const app = new Express();
 const server = new Server(app);
 //app.set('view engine', 'ejs');
 //app.set('views', path.join(__dirname, 'views'));
 
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(cookieParser());
+
 // define the folder that will be used for static assets
 app.use(Express.static(path.join(__dirname, 'public')));
+
+app.use(function(req, res, next){
+    req.db = db;
+    next();
+});
 
 // universal routing and rendering
 app.get('*', (req, res) => {

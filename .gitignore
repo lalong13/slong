@@ -38,3 +38,5 @@ babel_cache
 # minimized JS
 src/public/js/bundle.js
 
+# Swap files
+*.swp
