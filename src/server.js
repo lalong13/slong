@@ -10,7 +10,7 @@ import routes from './routes';
 import mongo from 'mongodb';
 import Monk from 'monk';
 
-//import NotFoundPage from './components/NotFoundPage';
+import NotFoundPage from './components/NotFoundPage';
 
 // initialize the server and configure support for ejs templates
 const db = new Monk('localhost:27017/forums');
@@ -19,9 +19,9 @@ const server = new Server(app);
 //app.set('view engine', 'ejs');
 //app.set('views', path.join(__dirname, 'views'));
 
-app.use(bodyParser.json());
+/*app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(cookieParser());
+app.use(cookieParser());*/
 
 // define the folder that will be used for static assets
 app.use(Express.static(path.join(__dirname, 'public')));

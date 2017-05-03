@@ -35,6 +35,7 @@
     "material-ui": "^0.18.0",
     "mongodb": "^2.2.26",
     "monk": "^4.0.0",
+    "prop-types": "^15.5.8",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
     "react-router": "^2.6.1",

@@ -1,9 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import AppRoutes from './components/AppRoutes';
 
 window.onload = () => {
     ReactDOM.render(
-        <h1>Hello, world!</h1>,
+        <AppRoutes/>,
         document.getElementById('main')
     );
 }
