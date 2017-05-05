@@ -16,12 +16,8 @@ import NotFoundPage from './components/NotFoundPage';
 const db = new Monk('localhost:27017/forums');
 const app = new Express();
 const server = new Server(app);
-//app.set('view engine', 'ejs');
-//app.set('views', path.join(__dirname, 'views'));
-
-/*app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(cookieParser());*/
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
 
 // define the folder that will be used for static assets
 app.use(Express.static(path.join(__dirname, 'public')));
