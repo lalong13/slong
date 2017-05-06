@@ -8,7 +8,7 @@
     "express-server": "./node_modules/.bin/babel-node --presets react,es2015 ./src/server.js",
     "dev": "concurrently --kill-others \"npm run webpack-watch\" \"npm run express-server\"",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prd": "concurrently --kill-others \"npm run webpack-watch\" \"npm run express-server\""
+    "prd": "NODE_ENV=\"production\" concurrently --kill-others \"npm run webpack-watch\" \"npm run express-server\""
   },
   "repository": {
     "type": "git",

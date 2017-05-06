@@ -1,26 +1,3 @@
-/*const webpack = require('webpack');
-const path = require('path');
-
-module.exports = {
-    entry: path.join(__dirname, 'src', 'client.js'),
-    output: {
-        path: path.join(__dirname, 'src', 'public', 'js'),
-        filename: 'bundle.js'
-    },
-    module: {
-        loaders: [
-            {
-                test: path.join(__dirname, 'src'),
-                exclude: /node_modules/,
-                loader: 'babel-loader',
-            }
-            ]
-    },
-    resolve: {
-        extensions: ['', '.js', '.json']
-    }
-};*/
-
 // webpack.config.js
 const webpack = require('webpack');
 const path = require('path');
@@ -48,10 +25,10 @@ module.exports = {
     new webpack.optimize.DedupePlugin(),
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.optimize.UglifyJsPlugin({
-      compress: { warnings: false },
-      mangle: true,
+      compress: process.env.NODE_ENV === "development" ? false : { warnings: false },
+      mangle: process.env.NODE_ENV !== "development",
       sourcemap: false,
-      beautify: false,
+      beautify: process.env.NODE_ENV === "development",
       dead_code: true
     })
   ]
