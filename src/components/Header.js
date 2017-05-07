@@ -33,11 +33,11 @@ export default class Header extends React.Component {
                     </Link>
                 </div>
                 <div className={"w3-bar w3-large w3-top w3-indigo " + this.props.darken}>
-                    <button className="w3-bar-item w3-button w3-hide-medium w3-hide-large" onClick={this.handleClick}>
+                    <button className="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-ripple w3-hover-deep-purple" onClick={this.handleClick}>
                         <i className="fa fa-bars"/>
                     </button>
                 {/*<!--  Logo link goes here -->*/}
-                    <Link to="/software_development" className="w3-bar-item w3-button w3-hide-small">
+                    <Link to="/software_development" className="w3-bar-item w3-button w3-hide-small w3-ripple w3-hover-deep-purple">
                         Software Development
                     </Link>
                 </div>
