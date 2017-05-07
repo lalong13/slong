@@ -7,7 +7,7 @@ export default class IndexPage extends React.Component {
       <div className="home">
         <div>
             <h1>Hello, world!</h1>
-            <iframe width="100%" height="auto" src="https://www.youtube.com/embed/y2-8TtMbQcQ" frameBorder="0" allowFullScreen></iframe>
+            <iframe width="auto" height="auto" src="https://www.youtube.com/embed/y2-8TtMbQcQ" frameBorder="0" allowFullScreen></iframe>
         </div>
       </div>
     );

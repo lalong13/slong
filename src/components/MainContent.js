@@ -8,7 +8,7 @@ export default class MainContent extends React.Component {
 
     render() {
         return (
-            <div className="app-content w3-show w3-container">{this.props.children}
+            <div className={"app-content w3-show w3-container"}>{this.props.children}
             </div>
         );
     }

@@ -1,8 +1,10 @@
 #main{height:100%}
 .w3-top,.w3-bottom{position:sticky;width:100%;z-index:0}.w3-top{top:0}.w3-bottom{bottom:0}
 .w3-animate-alt-left{position:relative;animation:animatealtleft 0.4s}@keyframes animatealtleft{from{left:0;opacity:1} to{left:-300px;opacity:0}}
-.app-container{height:100%}
+.sidebar{filter: brightness(100%)!important}
+.app-container{height:101%; transition: filter 0.4s}
 html, body
 {
     height: 100%;
 }
+.darken{filter: brightness(55%) contrast(60%);transition: filter 0.4s}

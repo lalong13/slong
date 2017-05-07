@@ -6,7 +6,7 @@ import MainContent from './MainContent';
 export default class Layout extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {sidbrVisibility: "w3-hide w3-animate-alt-left"};
+        this.state = {sidbrVisibility: "w3-hide w3-animate-alt-left", darken: ""};
 
         // This binding is necessary to make `this` work in the callback
         this.handleSidbrVisibilityChange = this.handleSidbrVisibilityChange.bind(this);
@@ -22,20 +22,23 @@ export default class Layout extends React.Component {
     }
 
     handleSidbrVisibilityChange(visibility) {
-        this.setState({sidbrVisibility: visibility});
+        let darken = (visibility === "w3-show w3-animate-left") ? "darken" : "";
+        this.setState({sidbrVisibility: visibility, darken: darken});
     }
 
     render() {
         return (
-            <div className="app-container" onClick={this.handleClick}>
-                <Header onVisibilityChange={this.handleSidbrVisibilityChange} visibility={this.state.sidbrVisibility}/>
-                <MainContent onVisibilityChange={this.handleSidbrVisibilityChange} visibility={this.state.sidbrVisibility}>{this.props.children}
-                </MainContent>
-                <footer>
-                    <p>
-                        This is a demo app to showcase universal rendering and routing with <strong>React</strong> and <strong>Express</strong>.
-                    </p>
-                </footer>
+            <div className={"app-container w3-light-grey"} onClick={this.handleClick}>
+                <Header onVisibilityChange={this.handleSidbrVisibilityChange} visibility={this.state.sidbrVisibility} darken={this.state.darken}/>
+                <div className={"app-container w3-light-grey " + this.state.darken}>
+                    <MainContent onVisibilityChange={this.handleSidbrVisibilityChange} visibility={this.state.sidbrVisibility} darken={this.state.darken}>{this.props.children}
+                    </MainContent>
+                    <footer className={"w3-container"}>
+                        <p>
+                            This is a demo app to showcase universal rendering and routing with <strong>React</strong> and <strong>Express</strong>.
+                        </p>
+                    </footer>
+                </div>
             </div>
         );
     }
