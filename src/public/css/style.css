@@ -2,9 +2,9 @@
 .w3-top,.w3-bottom{position:sticky;width:100%;z-index:0}.w3-top{top:0}.w3-bottom{bottom:0}
 .w3-animate-alt-left{position:relative;animation:animatealtleft 0.4s}@keyframes animatealtleft{from{left:0;opacity:1} to{left:-300px;opacity:0}}
 .sidebar{filter: brightness(100%)!important}
-.app-container{height:100vh; transition: filter 0.4s}
-.darken{filter: brightness(55%) contrast(60%);transition: filter 0.4s}
-.content{height:100%}
+.app-container{height:100%; min-height:100vh; transition: filter 0.4s}
+@media (max-width:601px){.darken{filter: brightness(55%) contrast(60%);transition: filter 0.4s}}
+.content{height:100%; min-height:100vh}
 .youtubevideowrap {
     width:80%;
 	max-width: 640px;

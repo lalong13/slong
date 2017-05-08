@@ -18,6 +18,9 @@ export default class Layout extends React.Component {
             if (this.state.sidbrVisibility === "w3-show w3-animate-left") {
                 this.handleSidbrVisibilityChange("w3-show w3-animate-alt-left");
             }
+            if (window.innerWidth > 600) {
+                this.handleSidbrVisibilityChange("w3-hide w3-animate-alt-left");
+            }
         }
     }
 
