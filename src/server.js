@@ -9,6 +9,11 @@ import { match, RouterContext } from 'react-router';
 import routes from './routes';
 import mongo from 'mongodb';
 import Monk from 'monk';
+import compress from 'compression';
+import fsep from 'fs-extra-plus';
+import rfs from 'rotating-file-stream';
+import moment from 'moment';
+import Morgan from 'morgan';
 
 import NotFoundPage from './components/NotFoundPage';
 
@@ -16,8 +21,26 @@ import NotFoundPage from './components/NotFoundPage';
 const db = new Monk('localhost:27017/forums');
 const app = new Express();
 const server = new Server(app);
+const logDir = path.join('/var/log/node', moment().format('Y/MM'));
+
+//ensure log directory exists
+fsep.ensureDirSync(logDir);
+
+//create a rotating write stream
+const accessLogStream = rfs('access.log', {
+    interval: '1d', // rotate daily
+    path: logDir,
+    compress: 'gzip' // compress rotated files
+});
+
+app.set();
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
+app.use(compress());
+Morgan.token('date', function() {
+    return moment().format('DD/MMM/YYYY:HH:mm:ss ZZ')
+});
+app.use(Morgan('combined', {stream: accessLogStream}));
 
 // define the folder that will be used for static assets
 app.use(Express.static(path.join(__dirname, 'public')));
