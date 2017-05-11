@@ -4,11 +4,12 @@
   "description": "test",
   "main": "index.js",
   "scripts": {
-    "webpack-watch": "./node_modules/webpack/bin/webpack.js -w",
-    "express-server": "./node_modules/.bin/babel-node --presets react,es2015 ./src/server.js",
+    "webpack-watch": "npm-run webpack -w",
+    "express-server": "npm-run babel-node --presets react,es2015 ./src/server.js",
     "dev": "PORT=3000 concurrently --kill-others \"npm run webpack-watch\" \"npm run express-server\"",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prd": "NODE_ENV=\"production\" PORT=80 concurrently --kill-others \"npm run webpack-watch\" \"npm run express-server\""
+    "prd": "NODE_ENV=\"production\" PORT=80 concurrently --kill-others \"npm run webpack-watch\" \"npm run express-server\"",
+    "start": "concurrently --kill-others \"npm run webpack-watch\" \"npm run express-server\""
   },
   "repository": {
     "type": "git",
