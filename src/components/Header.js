@@ -28,18 +28,20 @@ export default class Header extends React.Component {
     render() {
         return (
             <div className="w3-top">
-                <div id= "sidebar" className={"w3-sidebar sidebar w3-bar-block w3-hide-medium w3-hide-large " + this.props.visibility} onAnimationEnd={this.animationEnded}>
+                <div id= "sidebar" className={"w3-sidebar sidebar w3-light-grey w3-bar-block w3-hide-medium w3-hide-large " + this.props.visibility} onAnimationEnd={this.animationEnded}>
                     <Link to="/software_development" className="w3-bar-item w3-button">
-                        Software Development
+                        <strong>Software Development</strong>
                     </Link>
                 </div>
                 <div className={"w3-bar w3-large w3-indigo " + this.props.darken}>
                     <button className="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-ripple w3-hover-deep-purple" onClick={this.handleClick}>
                         <i className="fa fa-bars"/>
                     </button>
-                    <Link to="/" className="w3-bar-item w3-button w3-ripple w3-hover-deep-purple">
-                        <img src="/img/death_star_regular_azQ_icon.ico" />
+                    <div className="logo-link">
+                    <Link to="/" className="fill w3-bar-item w3-button w3-ripple w3-hover-deep-purple">
+                        <img src="/img/logo.png" className="logo"/>
                     </Link>
+                    </div>
                     <Link to="/software_development" className="w3-bar-item w3-button w3-hide-small w3-ripple w3-hover-deep-purple">
                         Software Development
                     </Link>

@@ -2,6 +2,7 @@
 import React from 'react';
 import Header from './Header';
 import MainContent from './MainContent';
+import Footer from './Footer';
 
 
 // Universal layout
@@ -38,11 +39,7 @@ export default class Layout extends React.Component {
                 <div className={"w3-content w3-light-grey content " + this.state.darken}>
                     <MainContent onVisibilityChange={this.handleSidbrVisibilityChange} visibility={this.state.sidbrVisibility} darken={this.state.darken}>{this.props.children}
                     </MainContent>
-                    <footer className={"w3-container"}>
-                        <p>
-                            This is a demo app to showcase universal rendering and routing with <strong>React</strong> and <strong>Express</strong>.
-                        </p>
-                    </footer>
+                    <Footer />
                 </div>
             </div>
         );

@@ -67,7 +67,7 @@ app.use(function(req, res, next){
 // universal routing and rendering
 app.get('*', (req, res) => {
     //Ensuring that we use www
-    if (req.headers.host.match(/^www/) == null) {
+    if (req.headers.host.match(/.net/) != null && req.headers.host.match(/^www/) == null) {
         return res.redirect(301, 'http://www.' + req.headers.host + req.url);
     } else {
         match(
