@@ -1,19 +1,33 @@
 // src/server.js
 
+/***************************
+ * Imported packages:
+ * React
+ * React-Router
+ * Express
+ * MongoDB
+ * FS-Extra-Plus
+ * Rotating-File-Stream
+ * Monk
+ * Compression
+ * Moment
+ * Morgan
+**/
+
 import path from 'path';
 import { Server } from 'http';
-import Express from 'express';
+import Express from 'express'; // Our server package
 import React from 'react';
 import { renderToString } from 'react-dom/server';
 import { match, RouterContext } from 'react-router';
 import routes from './routes';
-import mongo from 'mongodb';
-import Monk from 'monk';
-import compress from 'compression';
-import fsep from 'fs-extra-plus';
-import rfs from 'rotating-file-stream';
-import moment from 'moment';
-import Morgan from 'morgan';
+import mongo from 'mongodb'; // Our DB; JSON-based
+import Monk from 'monk'; // Our DB handler
+import compress from 'compression'; // Minimize data going on the wire
+import fsep from 'fs-extra-plus'; // File system package; Creates directories for logs
+import rfs from 'rotating-file-stream'; // Will rotate our logs
+import moment from 'moment'; // Date processing library
+import Morgan from 'morgan'; // Our access logger
 
 import NotFoundPage from './components/NotFoundPage';
 
@@ -33,13 +47,13 @@ const accessLogStream = rfs('access.log', {
     compress: 'gzip' // compress rotated files
 });
 
-app.set();
-app.set('view engine', 'ejs');
+app.set('view engine', 'ejs'); // Our view engine for server side rendering
 app.set('views', path.join(__dirname, 'views'));
 app.use(compress());
 Morgan.token('date', function() {
     return moment().format('DD/MMM/YYYY:HH:mm:ss ZZ')
 });
+// Default Apache style logging of access logs
 app.use(Morgan('combined', {stream: accessLogStream}));
 
 // define the folder that will be used for static assets
@@ -52,6 +66,7 @@ app.use(function(req, res, next){
 
 // universal routing and rendering
 app.get('*', (req, res) => {
+    //Ensuring that we use www
     if (req.headers.host.match(/^www/) == null) {
         return res.redirect(301, 'http://www.' + req.headers.host + req.url);
     } else {

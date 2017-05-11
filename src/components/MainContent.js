@@ -1,6 +1,7 @@
 // src/components/Layout.js
 import React from 'react';
 
+//Page Container
 export default class MainContent extends React.Component {
     constructor(props) {
         super(props);
