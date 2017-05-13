@@ -48,6 +48,7 @@
     "react-dom": "^15.5.4",
     "react-router": "^2.8.1",
     "rotating-file-stream": "^1.2.2",
+    "underscore": "^1.8.3",
     "webpack": "^2.6.1"
   }
 }
