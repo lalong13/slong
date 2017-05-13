@@ -5,7 +5,7 @@
                 "secret": "ballers",
                 "service": "github",
                 "nopm2": true,
-                "prehook": "npm install",
+                "prehook": "rm package-lock.json; npm install",
                 "posthook": "echo 'Repository successfully updated!'"
             }
         },

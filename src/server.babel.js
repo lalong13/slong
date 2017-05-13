@@ -12,6 +12,7 @@
  * Compression
  * Moment
  * Morgan
+ * Underscore
 **/
 
 import path from 'path';
@@ -28,7 +29,7 @@ import fsep from 'fs-extra-plus'; // File system package; Creates directories fo
 import rfs from 'rotating-file-stream'; // Will rotate our logs
 import moment from 'moment'; // Date processing library
 import Morgan from 'morgan'; // Our access logger
-
+import _ from 'underscore';
 import NotFoundPage from './components/NotFoundPage';
 
 // initialize the server and configure support for ejs templates
@@ -47,9 +48,9 @@ const accessLogStream = rfs('access.log', {
     compress: 'gzip' // compress rotated files
 });
 
+app.use(compress());
 app.set('view engine', 'ejs'); // Our view engine for server side rendering
 app.set('views', path.join(__dirname, 'views'));
-app.use(compress());
 Morgan.token('date', function() {
     return moment().format('DD/MMM/YYYY:HH:mm:ss ZZ')
 });
@@ -70,6 +71,7 @@ app.get('*', (req, res) => {
     if (req.headers.host.match(/.net/) != null && req.headers.host.match(/^www/) == null) {
         return res.redirect(301, 'http://www.' + req.headers.host + req.url);
     } else {
+        res.header("X-powered-by", "Blood, sweat, and tears");
         match(
             { routes, location: req.url },
             (err, redirectLocation, renderProps) => {
@@ -86,17 +88,18 @@ app.get('*', (req, res) => {
 
           // generate the React markup for the current route
                 let markup;
+                let isNotFound = _.find(renderProps.components, {name: "NotFoundPage"});
                 if (renderProps) {
             // if the current route matched we have renderProps
                     markup = renderToString(<RouterContext {...renderProps}/>);
                 } else {
             // otherwise we can render a 404 page
                     markup = renderToString(<NotFoundPage/>);
-                    res.status(404);
+                    return res.status(404).render('index', { markup });;
                 }
 
           // render the index template with the embedded React markup
-                return res.render('index', { markup });
+                return res.status(isNotFound ? 404 : 200).render('index', { markup });
             }
         );
     }
