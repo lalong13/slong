@@ -8,7 +8,7 @@
     "express-server": "npm-run babel-node --presets react,es2015 ./src/server.js",
     "dev": "PORT=3000 concurrently --kill-others \"npm run webpack-watch\" \"npm run express-server\"",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prd": "NODE_ENV=\"production\" PORT=80 concurrently --kill-others \"npm run webpack-watch\" \"npm run express-server\"",
+    "prd": "NODE_ENV=\"production\" PORT=$PORT concurrently --kill-others \"npm run webpack-watch\" \"npm run express-server\"",
     "start": "concurrently --kill-others \"npm run webpack-watch\" \"npm run express-server\""
   },
   "repository": {
