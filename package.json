@@ -6,9 +6,9 @@
   "scripts": {
     "webpack-watch": "npm-run webpack -w",
     "express-server": "npm-run babel-node --presets react,es2015 ./src/server.js",
-    "dev": "PORT=3000 concurrently --kill-others \"npm run webpack-watch\" \"npm run express-server\"",
+    "dev": "NODE_ENV=development PORT=3000 concurrently --kill-others \"npm run webpack-watch\" \"npm run express-server\"",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prd": "NODE_ENV=\"production\" PORT=$PORT concurrently --kill-others \"npm run webpack-watch\" \"npm run express-server\"",
+    "prd": "NODE_ENV=$NODE_ENV PORT=$PORT concurrently --kill-others \"npm run webpack-watch\" \"npm run express-server\"",
     "start": "concurrently --kill-others \"npm run webpack-watch\" \"npm run express-server\""
   },
   "repository": {

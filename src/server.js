@@ -35,7 +35,7 @@ import NotFoundPage from './components/NotFoundPage';
 const db = new Monk('localhost:27017/forums');
 const app = new Express();
 const server = new Server(app);
-const logDir = path.join('/var/log/node', moment().format('Y/MM'));
+const logDir = path.join('/home/$USER/var/log/node', moment().format('Y/MM'));
 
 //ensure log directory exists
 fsep.ensureDirSync(logDir);
