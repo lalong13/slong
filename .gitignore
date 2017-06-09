@@ -40,3 +40,8 @@ src/public/js/bundle.js
 
 # Swap files
 *.swp
+
+# PM2 deploy files
+.deploys
+current
+source
