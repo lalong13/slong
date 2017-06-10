@@ -2,14 +2,14 @@
   "name": "forums",
   "version": "1.0.0",
   "description": "test",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "webpack-watch": "npm-run webpack -w",
-    "express-server": "npm-run babel-node --presets react,es2015 ./src/server.js",
-    "dev": "NODE_ENV=development PORT=3000 concurrently --kill-others \"npm run webpack-watch\" \"npm run express-server\"",
+    "webpack": "./node_modules/webpack/bin/webpack.js",
+    "express-server": "./node_modules/.bin/babel-node --presets react,es2015 ./src/server.js",
+    "dev": "NODE_ENV=development PORT=3000; npm run webpack; npm run express-server",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prd": "NODE_ENV=$NODE_ENV PORT=$PORT concurrently --kill-others \"npm run webpack-watch\" \"npm run express-server\"",
-    "start": "concurrently --kill-others \"npm run webpack-watch\" \"npm run express-server\""
+    "prd": "NODE_ENV=$NODE_ENV PORT=$PORT; npm run webpack; npm run express-server",
+    "start": "npm run webpack; npm run express-server"
   },
   "repository": {
     "type": "git",
@@ -23,7 +23,7 @@
   "homepage": "https://github.com/lalong13/forums#readme",
   "dependencies": {
     "babel-cli": "^6.11.4",
-    "babel-core": "^6.13.2",
+    "babel-core": "^6.25.0",
     "babel-loader": "^6.4.1",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-runtime": "^6.23.0",
@@ -33,23 +33,21 @@
     "babel-preset-stage-0": "^6.24.1",
     "babel-register": "^6.24.1",
     "compression": "^1.6.2",
-    "concurrently": "^3.4.0",
     "ejs": "^2.5.6",
-    "express": "^4.14.1",
+    "express": "^4.15.3",
     "flux": "^3.1.2",
     "fs-extra-plus": "^0.1.1",
     "http-server": "^0.9.0",
     "modern-syslog": "^1.1.4",
     "moment": "^2.18.1",
-    "mongodb": "^2.2.26",
-    "monk": "^4.0.0",
-    "morgan": "^1.8.1",
-    "pm2-githook": "^1.9.1",
-    "prop-types": "^15.5.9",
-    "react": "^15.3.2",
-    "react-dom": "^15.3.2",
-    "react-router": "^2.6.1",
+    "mongodb": "^2.2.28",
+    "monk": "^4.1.0",
+    "morgan": "^1.8.2",
+    "prop-types": "^15.5.10",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "react-router": "^2.8.1",
     "rotating-file-stream": "^1.2.2",
-    "webpack": "^1.13.3"
+    "webpack": "^2.6.1"
   }
 }
