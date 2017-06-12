@@ -1,0 +1,19 @@
+{
+    "pm2-githook": {
+        "apps": {
+            "forums": {
+                "secret": "ballers",
+                "service": "github",
+                "nopm2": true,
+                "prehook": "npm install",
+                "posthook": "echo 'Repository successfully updated!'"
+            }
+        },
+        "port": 2324,
+        "version": "1.9.1",
+        "description": "forums webhook"
+    },
+    "module-db": {
+        "pm2-githook": "true"
+    }
+}

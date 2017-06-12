@@ -33,7 +33,7 @@ module.exports = {
             },
             instances: 0,
             exec_mode: 'cluster'
-        }
+        },
     ],
 
     /**
@@ -47,8 +47,8 @@ module.exports = {
             ref  : 'origin/master',
             repo : 'git@github.com:lalong13/forums.git',
             path : '/home/$USER/Node',
-            'pre-deploy'  : 'rm package-lock.json; npm install',
-            'post-deploy' : 'pm2 startOrRestart ecosystem.config.js --env production'
+            'pre-deploy'  : 'rm package-lock.json; npm install; pm2 install pm2-githook; mkdir -p /home/$USER/.pm2 && cp module_conf.json /home/$USER/.pm2/',
+            'post-deploy' : 'pm2 restart pm2-githook && pm2 startOrReload ecosystem.config.js --env production && pm2 save'
         },
         dev : {
             user : 'lalong13',
@@ -56,8 +56,8 @@ module.exports = {
             ref  : 'origin/master',
             repo : 'git@github.com:lalong13/forums.git',
             path : '/home/$USER/Node',
-            'pre-deploy'  : 'rm package-lock.json; npm install',
-            'post-deploy' : 'pm2 startOrRestart ecosystem.config.js --env dev'
+            'pre-deploy'  : 'rm package-lock.json; npm install; pm2 install pm2-githook; mkdir -p /home/$USER/.pm2 && cp module_conf.json /home/$USER/.pm2/',
+            'post-deploy' : 'pm2 restart pm2-githook && pm2 startOrReload ecosystem.config.js --env dev'
         }
     }
 };
