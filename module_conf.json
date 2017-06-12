@@ -4,7 +4,7 @@
             "forums": {
                 "secret": "ballers",
                 "service": "github",
-                "nopm2": true,
+                "nopm2": false,
                 "prehook": "rm package-lock.json; npm install",
                 "posthook": "echo 'Repository successfully updated!'"
             }
