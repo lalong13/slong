@@ -25,6 +25,7 @@ module.exports = {
       sourcemap: false,
       beautify: process.env.NODE_ENV === "development",
       dead_code: true
-    })
+    }),
+    new webpack.optimize.ModuleConcatenationPlugin()
   ]
 };

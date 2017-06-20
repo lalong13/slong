@@ -133,7 +133,7 @@ redirect.get('*', (req, res) => {
 // start the redirect to ssl/tls server
 const rdtPort = 8080;
 const env = process.env.NODE_ENV || 'production';
-server. listen(rdtPort, err => {
+server.listen(rdtPort, err => {
     if (err) {
         return console.error(err);
     }
