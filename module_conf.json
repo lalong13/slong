@@ -6,7 +6,7 @@
                 "service": "github",
                 "nopm2": false,
                 "prehook": "rm package-lock.json; npm install",
-                "posthook": "echo 'Repository successfully updated!'"
+                "posthook": "pm2 save"
             }
         },
         "port": 2324,
