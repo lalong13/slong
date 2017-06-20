@@ -9,7 +9,7 @@ export default class IndexPage extends React.Component {
             <h1>Hello, world!</h1>
             <div className="youtubevideowrap">
                 <div className="video-container">
-                    <iframe width="auto" height="auto" src="https://www.youtube-nocookie.com/embed/y2-8TtMbQcQ" frameBorder="0" allowFullScreen></iframe>
+                    <iframe width="auto" height="auto" src="https://www.youtube.com/embed/y2-8TtMbQcQ" frameBorder="0" allowFullScreen></iframe>
                 </div>
             </div>
         </div>
