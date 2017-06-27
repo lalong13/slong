@@ -37,8 +37,7 @@ export default class Layout extends React.Component {
             <div className={"app-container w3-light-grey"} onClick={this.handleClick}>
                 <Header onVisibilityChange={this.handleSidbrVisibilityChange} visibility={this.state.sidbrVisibility} darken={this.state.darken}/>
                 <div className={"w3-content w3-light-grey content " + this.state.darken}>
-                    <MainContent onVisibilityChange={this.handleSidbrVisibilityChange} visibility={this.state.sidbrVisibility} darken={this.state.darken}>{this.props.children}
-                    </MainContent>
+                    <MainContent onVisibilityChange={this.handleSidbrVisibilityChange} visibility={this.state.sidbrVisibility} darken={this.state.darken} />
                     <Footer />
                 </div>
             </div>

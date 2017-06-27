@@ -1,6 +1,7 @@
-// src/components/Layout.js
+// src/components/Header.js
 import React from 'react';
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
+import NavbarPages from './NavbarPages';
 
 export default class Header extends React.Component {
     constructor(props) {
@@ -28,10 +29,8 @@ export default class Header extends React.Component {
     render() {
         return (
             <div className="w3-top">
-                <div id= "sidebar" className={"w3-sidebar sidebar w3-light-grey w3-bar-block w3-hide-medium w3-hide-large " + this.props.visibility} onAnimationEnd={this.animationEnded}>
-                    <Link to="/software_development" className="w3-bar-item w3-button">
-                        <strong>Software Development</strong>
-                    </Link>
+                <div id= "sidebar" className={"w3-sidebar strong sidebar w3-light-grey w3-bar-block w3-hide-medium w3-hide-large " + this.props.visibility} onAnimationEnd={this.animationEnded}>
+                    <NavbarPages />
                 </div>
                 <div className={"w3-bar w3-large w3-indigo " + this.props.darken}>
                     <button className="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-ripple w3-hover-deep-purple" onClick={this.handleClick}>
@@ -42,9 +41,9 @@ export default class Header extends React.Component {
                         <img src="/img/logo.png" className="logo"/>
                     </Link>
                     </div>
-                    <Link to="/software_development" className="w3-bar-item w3-button w3-hide-small w3-ripple w3-hover-deep-purple">
-                        Software Development
-                    </Link>
+                    <div className="bar-item w3-hide-small">
+                        <NavbarPages />
+                    </div>
                 </div>
             </div>
         );

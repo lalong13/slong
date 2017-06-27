@@ -11,7 +11,7 @@ module.exports = {
   module: {
     loaders: [{
       test: path.join(__dirname, 'src'),
-      loader: ['babel-loader?presets[]=react,presets[]=es2015,cacheDirectory=babel_cache']
+      loader: ['babel-loader?presets[]=react,presets[]=es2015,presets[]=stage-0,cacheDirectory=babel_cache']
     }]
   },
   plugins: [
