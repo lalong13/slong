@@ -5,7 +5,7 @@
                 "secret": "ballers",
                 "service": "github",
                 "nopm2": false,
-                "prehook": "rm package-lock.json; npm install",
+                "prehook": "rm package-lock.json; rm -rf node_modules; npm install",
                 "posthook": "pm2 save"
             }
         },
