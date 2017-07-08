@@ -3,6 +3,7 @@ import React from 'react';
 import Header from './Header';
 import MainContent from './MainContent';
 import Footer from './Footer';
+import MainContainer from './MainContainer';
 
 
 // Universal layout
@@ -17,6 +18,7 @@ export default class Layout extends React.Component {
     }
 
     handleClick(e) {
+        console.log(e);
         if (e.target.id !== "sidebar") {
             if (this.state.sidbrVisibility === "w3-show w3-animate-left") {
                 this.handleSidbrVisibilityChange("w3-show w3-animate-alt-left");
@@ -34,13 +36,13 @@ export default class Layout extends React.Component {
 
     render() {
         return (
-            <div className={"app-container w3-light-grey"} onClick={this.handleClick}>
+            <MainContainer handleClick={this.handleClick}>
                 <Header onVisibilityChange={this.handleSidbrVisibilityChange} visibility={this.state.sidbrVisibility} darken={this.state.darken}/>
                 <div className={"w3-content w3-light-grey content " + this.state.darken}>
-                    <MainContent onVisibilityChange={this.handleSidbrVisibilityChange} visibility={this.state.sidbrVisibility} darken={this.state.darken} />
+                    <MainContent onVisibilityChange={this.handleSidbrVisibilityChange} visibility={this.state.sidbrVisibility} darken={this.state.darken} setStyle={this.setRouteStyle}/>
                     <Footer />
                 </div>
-            </div>
+            </MainContainer>
         );
     }
 }
