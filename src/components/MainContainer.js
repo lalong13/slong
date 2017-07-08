@@ -1,8 +1,5 @@
 // src/components/MainContainer.js
 import React from 'react';
-import Header from './Header';
-import MainContent from './MainContent';
-import Footer from './Footer';
 import { Switch } from 'react-router';
 import { Route } from 'react-router-dom';
 
@@ -21,6 +18,7 @@ export default class MainContainer extends React.Component {
         return (
             <Switch>
                 <Route exact path="/" render={props => ( <div className={"app-container w3-light-grey"} onClick={this.handleClick} style={{backgroundImage: "url(/img/Home.jpg)"}} >{this.props.children}</div> )} />
+                <Route exact path="/interests" render={props => ( <div className={"app-container w3-light-grey"} onClick={this.handleClick} style={{backgroundImage: "url(/img/Home.jpg)"}} >{this.props.children}</div> )} />
                 <Route render={props => ( <div className={"app-container w3-light-grey"} onClick={this.handleClick} style={{backgroundImage: "url(/img/Space.jpg)"}} >{this.props.children}</div> )} />
             </Switch>
             );
