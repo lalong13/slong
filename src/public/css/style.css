@@ -31,6 +31,24 @@ a.standard:visited { color: #551A8B; }.w3-bar{overflow:visible}
 	width:100%;
 	height:100%;
 }
+.notfound {
+    width:80%;
+	margin: 0 auto;
+}
+.stormtrooper {
+    position:relative;
+    padding-bottom:56.25%;
+	padding-top:30px;
+	height:0;
+	overflow:hidden;
+}
+.stormtrooper img {
+    position:absolute;
+    top:0;
+	left:0;
+	width:100%;
+	height:100%;
+}
 .strong {font-weight: bold}
 html,body{font-family:Roboto}
 h1,h2,h3,h4,h5,h6{font-family:Roboto}
