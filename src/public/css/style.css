@@ -8,13 +8,14 @@ a.standard:visited { color: #551A8B; }.w3-bar{overflow:visible}
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-    min-width: 100%; height: 100%;
+    min-width: 100%;
     background-position: 0 43px;
     position: fixed;
     -webkit-animation: fadein 1s;
     -moz-animation: fadein 1s;
     -o-animation: fade in 1s;
     animation: fadein 1s;
+    padding: 100% 0;
 }
 .interests{
     -webkit-transition: .5s ease-in-out;
@@ -29,6 +30,7 @@ a.standard:visited { color: #551A8B; }.w3-bar{overflow:visible}
 .starwars{background-image: url("/img/star_wars.jpg")}
 .notfound{background-image: url("/img/Space.jpg")}
 .contact{background-image: url("/img/vader.jpg")}
+.blog{background-image: url("/img/sf_night.jpg")}
 .footer{font-size:10pt;font-size:.75em}
 .logo{width:38px;height:24px}
 .content{height:100%; min-height:calc(100vh - 43px)}
