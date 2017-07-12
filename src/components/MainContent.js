@@ -3,6 +3,7 @@ import React from 'react';
 import { Switch } from 'react-router';
 import { Route } from 'react-router-dom';
 import IndexPage from './IndexPage';
+import ContactPage from './ContactPage';
 import InterestsPage from './InterestsPage';
 import NotFoundPage from './NotFoundPage';
 
@@ -14,6 +15,7 @@ export default class MainContent extends React.Component {
             <div className={"app-content w3-show w3-container"}>
                 <Switch>
                     <Route exact path="/" component={IndexPage}/>
+                    <Route exact path="/contact" component={ContactPage}/>
                     <Route exact path="/interests" component={InterestsPage}/>
                     <Route status={404} component={NotFoundPage}/>
                 </Switch>
