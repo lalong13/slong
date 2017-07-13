@@ -15,7 +15,7 @@ a.standard:visited { color: #551A8B; }.w3-bar{overflow:visible}
     -moz-animation: fadein 1s;
     -o-animation: fade in 1s;
     animation: fadein 1s;
-    padding: 100% 0;
+    padding: 28.5% 0;
 }
 .interests{
     -webkit-transition: .5s ease-in-out;
@@ -112,9 +112,6 @@ a.standard:visited { color: #551A8B; }.w3-bar{overflow:visible}
     .small-heading{width:100%;overflow:hidden}
     .fa-icon, .gmail{width: 30px; padding: 0px;}
     .gmail{height: 30px;}
-}
-@media (min-width:601px){
-    .background{max-width: 100%;}
 }
 html,body{font-family:Roboto}
 h1,h2,h3,h4,h5,h6{font-family:Roboto}
