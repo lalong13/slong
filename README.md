@@ -1,4 +1,4 @@
-# forums
+# slong
 
 ### This is a node app made by me for me
 
@@ -20,7 +20,7 @@ Anything in all CAPS or within `{}` should be replaced accordingly.
     1. `pm2 install pm2-githook`
     2. `cp module_conf.json ~/.pm2/`; that hidden pm2 directory is the default location
     3. `pm2 restart pm2-githook`
-    4. `pm2 startOrReload ecosystem.config.js --env production`
+    4. `pm2 startOrRestart ecosystem.config.js --env production`
     5. (_Optional_) `pm2 save`. This is to allow the app to be brought back with pm2 resurrect or to start on boot.
 10. If running locally go to step 11. Follow these directions to launch this on a remote server.
     1. ssh into the remote server as the User intended to be used.

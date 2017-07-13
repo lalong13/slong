@@ -1,17 +1,17 @@
 {
     "pm2-githook": {
         "apps": {
-            "forums": {
+            "slong": {
                 "secret": "ballers",
                 "service": "github",
                 "nopm2": false,
-                "prehook": "rm package-lock.json; rm -rf node_modules; npm install; npm dedupe",
+                "prehook": "rm package-lock.json; rm -rf node_modules; npm install; rm package-lock.json; npm dedupe",
                 "posthook": "pm2 startOrRestart ecosystem.config.js --env production; pm2 save"
             }
         },
         "port": 2324,
         "version": "1.9.1",
-        "description": "forums webhook"
+        "description": "slong webhook"
     },
     "module-db": {
         "pm2-githook": "true"

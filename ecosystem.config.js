@@ -26,7 +26,7 @@ module.exports = {
         },
         // Main application
         {
-            name      : 'forums',
+            name      : 'slong',
             script    : 'src/server.js',
             env: {
                 USER: 'lalong13'
@@ -45,19 +45,19 @@ module.exports = {
             user : 'lalong13',
             host : 'stephenlong.jedimasters.net',
             ref  : 'origin/master',
-            repo : 'git@github.com:lalong13/forums.git',
+            repo : 'git@github.com:lalong13/slong.git',
             path : '/home/$USER/Node',
             'pre-deploy'  : 'rm package-lock.json; npm install; pm2 install pm2-githook; mkdir -p /home/$USER/.pm2 && cp module_conf.json /home/$USER/.pm2/',
-            'post-deploy' : 'pm2 restart pm2-githook && pm2 startOrReload ecosystem.config.js --env production && pm2 save'
+            'post-deploy' : 'pm2 restart pm2-githook && pm2 startOrRestart ecosystem.config.js --env production && pm2 save'
         },
         dev : {
             user : 'lalong13',
             host : 'stephenlong.jedimasters.net',
             ref  : 'origin/master',
-            repo : 'git@github.com:lalong13/forums.git',
+            repo : 'git@github.com:lalong13/slong.git',
             path : '/home/$USER/Node',
             'pre-deploy'  : 'rm package-lock.json; npm install; pm2 install pm2-githook; mkdir -p /home/$USER/.pm2 && cp module_conf.json /home/$USER/.pm2/',
-            'post-deploy' : 'pm2 restart pm2-githook && pm2 startOrReload ecosystem.config.js --env dev'
+            'post-deploy' : 'pm2 restart pm2-githook && pm2 startOrRestart ecosystem.config.js --env dev'
         }
     }
 };

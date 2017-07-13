@@ -1,5 +1,5 @@
 {
-  "name": "forums",
+  "name": "slong",
   "version": "1.0.0",
   "description": "test",
   "main": "server.js",
@@ -13,14 +13,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/lalong13/forums.git"
+    "url": "git+ssh://git@github.com/lalong13/slong.git"
   },
   "author": "Stephen Long",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/lalong13/forums/issues"
+    "url": "https://github.com/lalong13/slong/issues"
   },
-  "homepage": "https://github.com/lalong13/forums#readme",
+  "homepage": "https://github.com/lalong13/slong#readme",
   "dependencies": {
     "babel-cli": "^6.24.1",
     "babel-loader": "^7.1.1",
