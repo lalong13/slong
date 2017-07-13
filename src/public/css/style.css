@@ -112,6 +112,7 @@ a.standard:visited { color: #551A8B; }.w3-bar{overflow:visible}
     .small-heading{width:100%;overflow:hidden}
     .fa-icon, .gmail{width: 30px; padding: 0px;}
     .gmail{height: 30px;}
+    .background{padding: 100% 0;}
 }
 html,body{font-family:Roboto}
 h1,h2,h3,h4,h5,h6{font-family:Roboto}
