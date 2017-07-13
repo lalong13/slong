@@ -34,7 +34,7 @@ import _ from 'underscore';
 import NotFoundPage from './components/NotFoundPage';
 
 // initialize the server and configure support for ejs templates
-const db = new Monk('localhost:27017/forums');
+const db = new Monk('localhost:27017/slong');
 const app = new Express();
 const redirect = new Express();
 
