@@ -15,7 +15,7 @@ export default class ContactPage extends React.Component {
                 </div>
                 <div className="w3-block w3-center">
                     <a className="gmail" href="mailto:real.lalong13@gmail.com?Subject=StephenLong%20Jedimasters"><img className="w3-center gmail-img" src="/img/New_Logo_Gmail.svg" /></a>
-                    <a href="" className="fa fa-icon fa-github"/>
+                    <a href="https://github.com/lalong13/slong" className="fa fa-icon fa-github"/>
                 </div>
             </div>
         );

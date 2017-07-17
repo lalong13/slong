@@ -70,12 +70,12 @@ export default class MainContainer extends React.Component {
     render() {
         return (
             <Switch>
-                <Route exact path="/" render={props => ( <div className={"app-container"} ><div className={"background index w3-hide-small w3-hide-medium"} /><div className={"w3-display-container"} onClick={this.handleClick}>{this.props.children}</div></div> )} />
-                <Route exact path="/contact" render={props => ( <div className={"app-container"} ><div className={"background contact"} /><div className={"w3-display-container"} onClick={this.handleClick}>{this.props.children}</div></div> )} />
-                <Route exact path="/software_development" render={props => ( <div className={"app-container"} ><div className={"background swdev w3-hide-small w3-hide-medium"} /><div className={"w3-display-container"} onClick={this.handleClick}>{this.props.children}</div></div> )} />
-                <Route exact path="/interests" render={props => ( <div ref={el => this.bg = el} className={"app-container"}> <div className={"background interests w3-hide-small w3-hide-medium " + this.state.interests} /><div className={"w3-display-container"} onClick={this.handleClick}>{this.props.children}</div></div> )} />
-                <Route exact path="/blog" render={props => ( <div className={"app-container"} ><div className={"background blog w3-hide-small w3-hide-medium"} /><div className={"w3-display-container"} onClick={this.handleClick}>{this.props.children}</div></div> )} />
-                <Route render={props => ( <div className={"app-container"} ><div className={"background notfound w3-hide-small w3-hide-medium"} /><div className={"w3-display-container"} onClick={this.handleClick}>{this.props.children}</div></div> )} />
+                <Route exact path="/" render={props => ( <div className={"app-container"}> <div className={"background index w3-hide-small w3-hide-medium"} /><div className={"w3-display-container"} onClick={this.handleClick}>{this.props.children}</div></div> )} />
+                <Route exact path="/contact" render={props => ( <div className={"app-container"}> <div className={"background contact"} /><div className={"w3-display-container"} onClick={this.handleClick}>{this.props.children}</div></div> )} />
+                <Route exact path="/software_development" render={props => ( <div className={"app-container"}> <div className={"background swdev w3-hide-small w3-hide-medium"} /><div className={"w3-display-container"} onClick={this.handleClick}>{this.props.children}</div></div> )} />
+                <Route exact path="/interests" render={props => ( <div ref={el => this.bg = el} className={"app-container"}> <div className={"background w3-hide-small w3-hide-medium " + this.state.interests} /><div className={"w3-display-container"} onClick={this.handleClick}>{this.props.children}</div></div> )} />
+                <Route exact path="/blog" render={props => ( <div className={"app-container"}> <div className={"background blog w3-hide-small w3-hide-medium"} /><div className={"w3-display-container"} onClick={this.handleClick}>{this.props.children}</div></div> )} />
+                <Route render={props => ( <div className={"app-container"}> <div className={"background notfound w3-hide-small w3-hide-medium"} /><div className={"w3-display-container"} onClick={this.handleClick}>{this.props.children}</div></div> )} />
             </Switch>
             );
     }

@@ -11,6 +11,9 @@ import NotFoundPage from './NotFoundPage';
 
 //Page Container
 export default class MainContent extends React.Component {
+    constructor(props) {
+        super(props);
+    }
 
     render() {
         return (
