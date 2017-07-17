@@ -60,6 +60,7 @@ const accessLogStream = rfs('access.log', {
 });
 
 app.use(compress());
+app.disable('x-powered-by');
 app.set('view engine', 'ejs'); // Our view engine for server side rendering
 app.set('views', path.join(__dirname, 'views'));
 Morgan.token('date', function() {
@@ -83,7 +84,21 @@ app.get('*', (req, res) => {
     if (req.headers.host.match(/.net/) != null && req.headers.host.match(/^www/) == null) {
         return res.redirect(301, 'https://www.' + req.headers.host + req.url);
     } else {
-        res.header("X-powered-by", "Blood, sweat, and tears");
+        let title = "";
+        const options = {
+            '/software_development':' &#8210; S/W Dev',
+            '/interests':' &#8210; Personal Interests',
+            '/blog':' &#8210; Blog',
+            '/contact':' &#8210; Contact Me',
+            '/not_found':' &#8210; Page Not Found'
+        }
+        if (req.url === "/"){}
+        else if (options[req.url]){
+            title = options[req.url];
+        } else {
+            title = title['/not_found'];
+        }
+
         const staticContext = {};
 
         const markup = renderToString(
@@ -92,7 +107,7 @@ app.get('*', (req, res) => {
             </StaticRouter>
         );
 
-        return res.status(staticContext.statusCode || 200).render('index', { markup });
+        return res.status(staticContext.statusCode || 200).render('index', { title, markup });
 
     }
 });

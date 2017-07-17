@@ -4,25 +4,57 @@ a.standard:visited { color: #551A8B; }.w3-bar{overflow:visible}
 .w3-animate-alt-left{position:relative;animation:animatealtleft 0.4s}@keyframes animatealtleft{from{left:0;opacity:1} to{left:-300px;opacity:0}}
 .sidebar{filter: brightness(100%)!important; top: 0}
 .app-container{height:100%; min-height:100vh; transition: filter 0.4s}
+.flexbox{display:inline-flex; align-items:center}
+.flexdivright{order:99}
+.shrinkwrap{display:inline-block!important;width:fit-content}
+.w3-image-alt{width:auto;max-height:100%}
 .background{
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
     min-width: 100%;
+    min-height: 100vh;
+    height: auto;
     background-position: 0 43px;
     position: fixed;
-    -webkit-animation: fadein 1s;
-    -moz-animation: fadein 1s;
-    -o-animation: fade in 1s;
-    animation: fadein 1s;
-    padding: 28.5% 0;
-}
-.interests{
+    -webkit-animation: fadein 2s;
+    -moz-animation: fadein 2s;
+    -o-animation: fadein 2s;
+    animation: fadein 2s;
     -webkit-transition: .5s ease-in-out;
     -moz-transition: .5s ease-in-out;
     -o-transition: .5s ease-in-out;
     transition: .5s ease-in-out;
+    padding: 28.5% 0;
 }
+.indexbg{
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    min-height:calc(100vh + 43px);
+    position: -webkit-relative;
+    position: -moz-relative;
+    position: -o-relative;
+    position: relative;
+}
+.slcss{
+    position: -webkit-absolute;
+    transition: -moz-absolute;
+    transition: -o-absolute;
+    position: absolute;
+    min-height:calc(100vh+43px);
+    z-index: 0;
+}
+.sl{
+    background-image: url("/img/Stephen_Long.jpg");
+    -webkit-animation: fadein 2s;
+    -moz-animation: fadein 2s;
+    -o-animation: fadein 2s;
+    animation: fadein 2s;
+}
+.slcanvas{background: #fff; min-height:calc(100vh+43px);}
+.index-title{padding-top:64px!important;padding-bottom:64px!important}
 .index{background-image: url("/img/Home.jpg")}
 .swdev{background-image: url("/img/code.jpg")}
 .sports{background-image: url("/img/nba.jpg")}
@@ -34,6 +66,8 @@ a.standard:visited { color: #551A8B; }.w3-bar{overflow:visible}
 .footer{font-size:10pt;font-size:.75em}
 .logo{width:38px;height:24px}
 .content{height:100%; min-height:calc(100vh - 43px)}
+.bottom-right{float:right;clear:right;}
+.florida{max-width:25%;height:auto; padding-top: 2px;}
 .youtubevideowrap {
     width:80%;
 	max-width: 640px;
@@ -102,19 +136,34 @@ a.standard:visited { color: #551A8B; }.w3-bar{overflow:visible}
     background: #fff;
     color: black;
 }
-@media (max-width:601px){
+@media (min-width:993px){
+    .flexbox-large{display:inline-flex; align-items:center}
+    .react-space-large{height:69px;width: 0px;float: right}
+}
+@media (max-width:992px) and (min-width:601px){
+    .flexbox-med{display:inline-flex; align-items:center}
+    .react-space-large{height:85px;width: 0px;float: right}
+    .index-title{padding-top:16px!important;padding-bottom:16px!important}
+    .florida{max-width:40%;height:auto; padding-top: 2px;}
+}
+@media (max-width:600px){
     .darken{filter: brightness(55%) contrast(60%);animation: filter 0.4s}
-    .logo-link{margin: auto; width: 88.25%; display: flex; text-align:center}
+    .logo-link{margin: auto; width: 85%; display: flex; text-align:center}
     a.fill.w3-bar-item{display:inline-block; width: 100%}
     .contact{background-position: 60% 43px}
-    .sonic{height:35%;width:35%; margin: 0}
-    .mario{height:65%;width:65%; margin: 0}
+    .sl{background-position: 40% 0;}
+    .sonic{height:35%;width:35%; margin: 0!important; padding: 0!important}
+    .mario{height:65%;width:65%; margin: 0!important; padding: 0!important}
     .small-heading{width:100%;overflow:hidden}
     .fa-icon, .gmail{width: 30px; padding: 0px;}
     .gmail{height: 30px;}
     .background{padding: 100% 0;}
+    .flexbox-small{display:inline-flex; align-items:center}
+    .react-space-small{height:179px;width: 0px;float: right;}
+    .index-title{padding-top:16px!important;padding-bottom:16px!important}
+    .florida{max-width:50%;height:auto; padding-top: 2px;}
 }
-html,body{font-family:Roboto}
+html,body{font-family:Roboto;height:100%}
 h1,h2,h3,h4,h5,h6{font-family:Roboto}
 
 @keyframes fadein {
