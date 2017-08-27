@@ -21,7 +21,7 @@ module.exports = {
                 NODE_ENV: 'development'
             },
             env: {
-                USER: 'lalong13'
+                USER: 'ubuntu'
             },
         },
         // Main application
@@ -29,7 +29,7 @@ module.exports = {
             name      : 'slong',
             script    : 'src/server.js',
             env: {
-                USER: 'lalong13'
+                USER: 'ubuntu'
             },
             instances: 0,
             exec_mode: 'cluster'
@@ -42,8 +42,9 @@ module.exports = {
      */
     deploy : {
         production : {
-            user : 'lalong13',
+            user : 'ubuntu',
             host : 'stephenlong.jedimasters.net',
+            key  : '~/.ssh/jedimasters.pem',
             ref  : 'origin/master',
             repo : 'git@github.com:lalong13/slong.git',
             path : '/home/$USER/Node',
@@ -51,8 +52,9 @@ module.exports = {
             'post-deploy' : 'pm2 restart pm2-githook && pm2 startOrRestart ecosystem.config.js --env production && pm2 save'
         },
         dev : {
-            user : 'lalong13',
+            user : 'ubuntu',
             host : 'stephenlong.jedimasters.net',
+            key  : '~/.ssh/jedimasters.pem',
             ref  : 'origin/master',
             repo : 'git@github.com:lalong13/slong.git',
             path : '/home/$USER/Node',
