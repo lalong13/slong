@@ -23,7 +23,7 @@ export default class Layout extends React.Component {
         this.handleClick = this.handleClick.bind(this);
     }
 
-    componentWillReceiveProps(nextProps){
+    UNSAFE_componentWillReceiveProps(nextProps){
         if (this.props !== nextProps) {
             if (nextProps.location.pathname === "/contact") {
                 this.setState({grey: "w3-text-light-grey"});
@@ -73,7 +73,7 @@ export default class Layout extends React.Component {
 
     render() {
         return (
-            <MainContainer handleClick={this.handleClick}>
+            <MainContainer handleClick={this.handleClick} location={this.props.location}>
                 <Header onVisibilityChange={this.handleSidbrVisibilityChange} visibility={this.state.sidbrVisibility} darken={this.state.darken}/>
                 <div className={"indexbg " + this.state.index}>
                     <div className={"indexbg slcanvas w3-top slcss"}/>

@@ -32,12 +32,12 @@ export default class InterestsPage extends React.Component {
                     <img className={"w3-image"} src="/img/xbox.jpg"/>
                 </div>
                 <h3>XBox</h3>
-                    <p>I’m not much into PC gaming these days as I spend the majority of my time gaming on my XBox. It wasn’t long after the Dreamcast died off that I was
-                    seriously considering getting a Playstation 2. I had the opportunity to
-                    play <a href="https://en.wikipedia.org/wiki/Halo:_Combat_Evolved" className="standard">Halo: Combat Evolved</a> in a store with my brother and I was instantly
+                    <p>{"I’m not much into PC gaming these days as I spend the majority of my time gaming on my XBox. It wasn’t long after the Dreamcast died off that I was "+
+                    "seriously considering getting a Playstation 2. I had the opportunity to " +
+                    "play "}<a href="https://en.wikipedia.org/wiki/Halo:_Combat_Evolved" className="standard">Halo: Combat Evolved</a> in a store with my brother and I was instantly
                     sold. I mainly play shooters these days such as Halo, Gears of War, Bioshock, and so forth, but there was a time when I played more. I still play Assassin’s
                     Creed, Forza and some other games as well and if you want to challenge me, my gamertag
-                    is <a href="https://account.xbox.com/en-US/Profile?gamerTag=LALong13" className="standard">LALong13</a>. That’s pronounced L-A-Long-13.</p>
+                    is <a href="https://account.xbox.com/en-US/Profile?gamerTag=LALong13" className="standard">LALong13</a>{". That’s pronounced L-A-Long-13."}</p>
                 <h3>Old School gaming</h3>
                 <div className={"w3-padding-small w3-left w3-center w3-margin sonic"}>
                 <img className={"w3-image"} src="/img/sonic05_32.png"/>
@@ -49,15 +49,15 @@ export default class InterestsPage extends React.Component {
                     Arcade sports games (NBA JAM, NFL Blitz), racers (Gran Turismo), shooters (Doom, Duke Nukem), and adventure games (Zelda, Metroid), I played them all. I was
                     (and still am) very competitive and loved to win. I still like to enjoy some of the classic games every now and then.</p>
                 <h2>Electronics</h2>
-                    <p>I'm into TVs, computers, cell phones, sound systems, etc. If it runs off of electricity I'm probably into it. Right now I have an eye out for one of those
-                    4K OLED TVs LG makes, and I cannot wait until the Google Pixel XL 2 comes out.</p>
+                    <p>{"I'm into TVs, computers, cell phones, sound systems, etc. If it runs off of electricity I'm probably into it. Right now I have an eye out for one of those " +
+                    "4K OLED TVs LG makes, and I love my Google Pixel XL 2."}</p>
                 <h2>Travel</h2>
                     <p>I love to travel and see different places. So far I have mostly been around the US, but I have been to Canada and Mexico along with a trip to Beijing and
                     the Great Wall of China. I still have not been to Boston, Miami, or Chicago, but I would also love to visit other nations in Europe, Asia, Africa, and South
                     America.</p>
                 <h2>Movies</h2>
-                    <p>I wouldn't call myself a movie buff but I am really into Comic Book movies (DC Comics movies make me sad) and in case you haven't guessed yet, Star Wars. I
-                    will leave you with a little video that kept me company on the main page while developing this site. Enjoy!!</p>
+                    <p>{"I wouldn't call myself a movie buff but I am really into Comic Book movies (DC Comics movies make me sad) and in case you haven't guessed yet, Star Wars. I " +
+                    "will leave you with a little video that kept me company on the main page while developing this site. Enjoy!!"}</p>
                 <div className={"youtubevideowrap"}>
                     <div className={"video-container"}>
                         <iframe width="auto" height="auto" src="https://www.youtube.com/embed/y2-8TtMbQcQ" frameBorder="0" allowFullScreen></iframe>

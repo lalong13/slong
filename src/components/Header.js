@@ -13,14 +13,14 @@ export default class Header extends React.Component {
     }
 
     //Show sidebar on small screen when menu button is clicked
-    handleClick(e) {
+    handleClick() {
         if (this.props.visibility !== "w3-show w3-animate-left") {
             this.props.onVisibilityChange("w3-show w3-animate-left");
         }
     }
 
     //Hide sidebar when sidebar animation ends (event)
-    animationEnded(e) {
+    animationEnded() {
         if (this.props.visibility === "w3-show w3-animate-alt-left") {
             this.props.onVisibilityChange("w3-hide w3-animate-alt-left");
         }

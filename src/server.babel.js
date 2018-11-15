@@ -26,12 +26,14 @@ import routes from './routes';
 import mongo from 'mongodb'; // Our DB; JSON-based
 import Monk from 'monk'; // Our DB handler
 import compress from 'compression'; // Minimize data going on the wire
-import fsep from 'fs-extra-plus'; // File system package; Creates directories for logs
+import * as fsep from 'fs-extra-plus'; // File system package; Creates directories for logs
 import rfs from 'rotating-file-stream'; // Will rotate our logs
 import moment from 'moment'; // Date processing library
 import Morgan from 'morgan'; // Our access logger
 import _ from 'underscore';
 import NotFoundPage from './components/NotFoundPage';
+import { exec } from 'child_process';
+
 
 // initialize the server and configure support for ejs templates
 const db = new Monk('localhost:27017/slong');
@@ -39,14 +41,14 @@ const app = new Express();
 const redirect = new Express();
 
 // Put key and tls/ssl cert here
-const certDir = path.join(__dirname,'cert');
-fsep.ensureDirSync(certDir);
-const privateKey = fsep.readFileSync(path.join(certDir, 'privkey.pem'), 'ascii');
-const certificate = fsep.readFileSync(path.join(certDir, 'fullchain.pem'), 'ascii');
-
-const options = {key: privateKey, cert: certificate};
-const secServer = new tlsServer(options, app);
-const server = new Server(redirect);
+// const certDir = path.join(__dirname,'cert');
+// fsep.ensureDirSync(certDir);
+// const privateKey = fsep.readFileSync(path.join(certDir, 'privkey.pem'), 'ascii');
+// const certificate = fsep.readFileSync(path.join(certDir, 'fullchain.pem'), 'ascii');
+//
+// const options = {key: privateKey, cert: certificate};
+// const secServer = new tlsServer(options, app);
+const server = new Server(app);
 const logDir = path.join(__dirname, '../../..', 'var/log/node', moment().format('Y/MM'));
 
 //ensure log directory exists
@@ -107,7 +109,11 @@ app.get('*', (req, res) => {
             </StaticRouter>
         );
 
-        return res.status(staticContext.statusCode || 200).render('index', { title, markup });
+        let main = fsep.readJsonSync("src/public/manifest.json");
+
+        main = main["main.js"];
+
+        return res.status(staticContext.statusCode || 200).render('index', { title, markup, main});
 
     }
 });
@@ -128,16 +134,16 @@ redirect.get('*', (req, res) => {
 // start the redirect to ssl/tls server
 const rdtPort = 8080;
 const env = process.env.NODE_ENV || 'production';
-server.listen(rdtPort, err => {
-    if (err) {
-        return console.error(err);
-    }
-    console.info(`Redirect running on http://localhost:${rdtPort} [${env}]`);
-});
+// server.listen(rdtPort, err => {
+//     if (err) {
+//         return console.error(err);
+//     }
+//     console.info(`Redirect running on http://localhost:${rdtPort} [${env}]`);
+// });
 
 // start the server
 const port = process.env.PORT || 3000;
-secServer.listen(port, err => {
+server.listen(port, err => {
   if (err) {
     return console.error(err);
   }

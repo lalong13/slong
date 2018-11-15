@@ -26,8 +26,8 @@ export default class IndexPage extends React.Component {
                         <p>Since graduating from Georgia Tech in Atlanta (Go Jackets!!!), I have made my home in the San Francisco Bay Area. From data analysis to full-stack
                         engineering, I am a versatile engineer with varied interests.</p>
                         <h2>The Skinny</h2>
-                        <p>I made this website mostly as an exercise for myself. It's been a great a learning experience and a lot of fun. Check my blog once I get it going for
-                        updates.</p>
+                        <p>{"I made this website mostly as an exercise for myself. It's been a great a learning experience and a lot of fun. Check my blog once I get it going " +
+                           "for updates."}</p>
                     </div>
                 </div>
             </div>
